@@ -1,1 +1,128 @@
+/* Configurações básicas/reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Escolha a fonte desejada */
+}
 
+body {
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.perfil-card {
+    width: 100%;
+    max-width: 500px; /* Limita a largura da página, como no exemplo */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que bordas arredondadas funcionem */
+}
+
+/* --- ESTILO DO CABEÇALHO --- */
+.perfil-header {
+    background-color: #3b5998; /* Azul escuro do topo */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0; /* A foto preenche o espaço */
+}
+
+.nome {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.icone-insta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.foto-principal img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Ajuste de opacidade ou filtro se quiser o efeito de desfoque/escurecimento */
+    filter: brightness(0.8) blur(1px); /* Exemplo de filtro */
+}
+
+/* --- SEÇÃO "SOBRE MIM" --- */
+.sobre-mim {
+    background-color: #b0c4de; /* Azul claro/Lavanda */
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.sobre-mim h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.galeria-grid {
+    display: grid;
+    /* 3 colunas, ajustando para telas menores se necessário */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.galeria-item {
+    text-align: center;
+}
+
+.galeria-item img {
+    width: 100%;
+    /* Mantém a proporção da imagem ou defina um tamanho fixo */
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border: 3px solid white; /* Borda branca das fotos */
+    border-radius: 5px;
+    display: block;
+}
+
+.galeria-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
+}
+
+/* --- RODAPÉ/CONTATO --- */
+.perfil-footer {
+    background-color: #3b5998; /* Azul escuro do rodapé */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.whatsapp-contato {
+    font-weight: bold;
+    display: block; /* Para quebrar a linha ou ocupar espaço próprio */
+    margin-top: 5px;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.7em;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/* Estilo para Responsividade (opcional, mas recomendado) */
+@media (max-width: 400px) {
+    .galeria-grid {
+        /* Muda para 2 colunas em telas muito pequenas */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
