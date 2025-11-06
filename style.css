@@ -83,7 +83,7 @@ body {
 
 .botoes button:hover {
   background-color: #5a64c9;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 /* Rodapé */
