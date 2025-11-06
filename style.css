@@ -1,5 +1,4 @@
-
-/* --- CONFIGURAÇÕES BÁSICAS/RESET (Manter) --- */
+/* --- CONFIGURAÇÕES BÁSICAS/RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,89 +7,73 @@
 }
 
 body {
-    min-height: 100vh;
-    background-color: #f0f0f0; /* Fundo cinza claro */
+    /* Centraliza o card na vertical e horizontal */
     display: flex;
     justify-content: center;
-    padding: 20px 10px; /* Adiciona padding para não colar nas bordas da tela */
+    align-items: flex-start; /* Começa o conteúdo no topo */
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px 10px; 
 }
 
 .perfil-card {
     width: 100%;
-    /* Define uma largura MÁXIMA para o cartão, para ele não ficar muito esticado em monitores gigantes */
+    /* Define o tamanho máximo para manter a aparência de "cartão" */
     max-width: 700px; 
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
 }
 
-/* --- 1. CABEÇALHO E FOTO DE DESTAQUE (Correção de Bordas e Altura) --- */
+/* --- CABEÇALHO E FOTO DE DESTAQUE --- */
 .perfil-header {
-    background-color: #3b5998; /* Azul escuro do topo */
+    background-color: #3b5998; 
     color: white;
-    padding: 20px;
+    padding: 20px 20px 0 20px; 
     text-align: center;
     position: relative;
-    padding-bottom: 0; 
-}
-
-.nome {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    z-index: 10;
-}
-
-/* Ícone do Instagram - Ajuste a posição se necessário */
-.icone-insta {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    /* ... outros estilos ... */
 }
 
 .foto-principal-container {
     width: 100%;
-    /* Altura reduzida (250px como solicitado) */
+    /* Altura reduzida e fixa */
     height: 250px; 
     overflow: hidden;
-    margin: 0 auto; /* Centraliza o contêiner (opcional) */
-    /* Remove a margem ou padding extra aqui */
+    margin-top: 10px; /* Adiciona um pequeno espaço entre o nome e a foto */
 }
 
 .foto-principal-container img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    object-fit: cover; 
     object-position: center top; 
-    
-    /* Filtro Suavizado: Menos desfoque e mais brilho para melhorar a qualidade percebida */
+    /* Filtro leve para a foto principal */
     filter: brightness(0.9) blur(0.5px); 
-    
-    /* Remove bordas indesejadas */
-    border-radius: 0; 
 }
 
-/* --- 2. SEÇÃO "SOBRE MIM" E GALERIA (Correção do Layout da Galeria) --- */
+/* --- SEÇÃO "SOBRE MIM" E GALERIA (Correção principal do alinhamento) --- */
 .sobre-mim {
-    background-color: #b0c4de; /* Azul claro/Lavanda */
+    background-color: #b0c4de; 
     padding: 20px 10px;
     text-align: center;
 }
 
-.sobre-mim h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
 .galeria-grid {
+    /* CHAVE 1: Centraliza o GRID dentro da seção "Sobre Mim" */
+    margin: 0 auto; 
+    /* Define a largura máxima para o grid */
+    max-width: 600px; 
+    
     display: grid;
-    /* CHAVE DE CORREÇÃO: Define 3 colunas padrão para garantir que caibam bem */
+    /* CHAVE 2: Força 3 colunas em telas normais/grandes */
     grid-template-columns: repeat(3, 1fr); 
     gap: 15px; 
-    padding: 0 15px; /* Padding interno para não colar nas laterais do .sobre-mim */
-    max-width: 100%; /* Garante que não ultrapasse o contêiner pai */
+    padding: 0 15px; 
+}
+
+.galeria-item {
+    text-align: center;
 }
 
 .galeria-item img {
@@ -98,38 +81,47 @@ body {
     aspect-ratio: 1 / 1; 
     object-fit: cover;
     
-    /* Melhora visual para "qualidade" */
+    /* Melhorias visuais para qualidade */
     border: 4px solid white; 
     border-radius: 8px; 
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
-/* --- 3. RODAPÉ/CONTATO (Ajuste para telas pequenas) --- */
+.galeria-item p {
+    margin-top: 8px; 
+    font-size: 1em; 
+    font-weight: bold;
+}
+
+/* --- RODAPÉ/CONTATO --- */
 .perfil-footer {
     background-color: #3b5998; 
     color: white;
     padding: 15px 20px;
     text-align: center;
-    /* Flexbox ajuda a centralizar e organizar o conteúdo */
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+}
+
+.whatsapp-contato {
+    font-weight: bold;
+    display: block; 
+    margin-top: 5px;
 }
 
 .copyright {
     margin-top: 10px;
     font-size: 0.7em;
-    /* Garante que o texto de copyright quebre a linha corretamente */
-    word-wrap: break-word; 
-    max-width: 100%;
+    line-height: 1.4;
+    opacity: 0.8;
 }
 
 /* --- MEDIA QUERIES (Ajustes para Responsividade) --- */
+
 @media (max-width: 550px) {
-    /* Em telas de celular, passa a galeria para 2 colunas */
+    /* Em telas de celular, o grid muda para 2 colunas */
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr); 
+        max-width: 100%; /* Permite que o grid ocupe toda a largura disponível */
     }
 }
