@@ -1,4 +1,4 @@
-/* --- CONFIGURAÇÕES BÁSICAS/RESET --- */
+/* --- RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,70 +6,59 @@
     font-family: Arial, sans-serif;
 }
 
+/* --- CORPO COMPLETO --- */
 body {
-    /* Centraliza o card na vertical e horizontal */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Começa o conteúdo no topo */
     min-height: 100vh;
+    width: 100%;
     background-color: #f0f0f0;
-    padding: 20px 10px; 
 }
 
+/* --- CARD AGORA OCUPA A PÁGINA TODA --- */
 .perfil-card {
     width: 100%;
-    /* Define o tamanho máximo para manter a aparência de "cartão" */
-    max-width: 700px; 
-    border-radius: 10px;
+    min-height: 100vh;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    box-shadow: none; /* Remove o sombreado de "cartão" */
 }
 
-/* --- CABEÇALHO E FOTO DE DESTAQUE --- */
+/* --- CABEÇALHO --- */
 .perfil-header {
     background-color: #3b5998; 
     color: white;
-    padding: 20px 20px 0 20px; 
+    padding: 20px;
     text-align: center;
-    position: relative;
 }
 
 .foto-principal-container {
     width: 100%;
-    /* Altura reduzida e fixa */
-    height: 250px; 
+    height: 350px;
     overflow: hidden;
-    margin-top: 10px; /* Adiciona um pequeno espaço entre o nome e a foto */
+    margin-top: 10px;
 }
 
 .foto-principal-container img {
     width: 100%;
     height: 100%;
-    display: block;
-    object-fit: cover; 
-    object-position: center top; 
-    /* Filtro leve para a foto principal */
-    filter: brightness(0.9) blur(0.5px); 
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.9);
 }
 
-/* --- SEÇÃO "SOBRE MIM" E GALERIA (Correção principal do alinhamento) --- */
+/* --- SEÇÃO SOBRE MIM --- */
 .sobre-mim {
     background-color: #b0c4de; 
-    padding: 20px 10px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 .galeria-grid {
-    /* CHAVE 1: Centraliza o GRID dentro da seção "Sobre Mim" */
-    margin: 0 auto; 
-    /* Define a largura máxima para o grid */
-    max-width: 600px; 
-    
+    width: 100%;
+    max-width: 1200px; /* Controla a largura máxima, se quiser */
+    margin: 0 auto;
     display: grid;
-    /* CHAVE 2: Força 3 colunas em telas normais/grandes */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 15px; 
-    padding: 0 15px; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .galeria-item {
@@ -78,28 +67,30 @@ body {
 
 .galeria-item img {
     width: 100%;
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    
-    /* Melhorias visuais para qualidade */
-    border: 4px solid white; 
-    border-radius: 8px; 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+    border: 4px solid white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
+.galeria-item img:hover {
+    transform: scale(1.05);
+}
+
 .galeria-item p {
-    margin-top: 8px; 
-    font-size: 1em; 
+    margin-top: 10px;
+    font-size: 1em;
     font-weight: bold;
 }
 
-/* --- RODAPÉ/CONTATO --- */
+/* --- RODAPÉ --- */
 .perfil-footer {
     background-color: #3b5998; 
     color: white;
-    padding: 15px 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -107,21 +98,22 @@ body {
     font-weight: bold;
     display: block; 
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .copyright {
     margin-top: 10px;
-    font-size: 0.7em;
-    line-height: 1.4;
+    font-size: 0.8em;
     opacity: 0.8;
 }
 
-/* --- MEDIA QUERIES (Ajustes para Responsividade) --- */
-
-@media (max-width: 550px) {
-    /* Em telas de celular, o grid muda para 2 colunas */
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
     .galeria-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        max-width: 100%; /* Permite que o grid ocupe toda a largura disponível */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .foto-principal-container {
+        height: 250px;
     }
 }
