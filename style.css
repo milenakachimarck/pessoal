@@ -1,5 +1,5 @@
 
-/* --- CONFIGURAÇÕES BÁSICAS/GERAIS (Mantenha) --- */
+/* --- CONFIGURAÇÕES BÁSICAS/RESET (Manter) --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,54 +8,89 @@
 }
 
 body {
-    /* Ocupa a altura mínima da tela */
-    min-height: 100vh; 
-    /* Você pode ajustar ou manter o body dependendo se quer centralizar ou não */
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px; /* Adiciona padding para não colar nas bordas da tela */
 }
 
 .perfil-card {
     width: 100%;
-    /* Remova max-width se quiser tela cheia, ou mantenha um valor alto (ex: 1200px) */
-    max-width: 1000px; 
-    margin: 0 auto;
+    /* Define uma largura MÁXIMA para o cartão, para ele não ficar muito esticado em monitores gigantes */
+    max-width: 700px; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
 }
 
-/* --- 1. DIMINUIR A FOTO EM DESTAQUE --- */
+/* --- 1. CABEÇALHO E FOTO DE DESTAQUE (Correção de Bordas e Altura) --- */
+.perfil-header {
+    background-color: #3b5998; /* Azul escuro do topo */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0; 
+}
+
+.nome {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    z-index: 10;
+}
+
+/* Ícone do Instagram - Ajuste a posição se necessário */
+.icone-insta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* ... outros estilos ... */
+}
+
 .foto-principal-container {
     width: 100%;
-    /* CHAVE: Diminui a altura do contêiner da foto principal */
-    height: 250px; /* Reduzido de 400px para 250px (ajuste este valor como preferir) */
-    overflow: hidden; 
-    position: relative;
+    /* Altura reduzida (250px como solicitado) */
+    height: 250px; 
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o contêiner (opcional) */
+    /* Remove a margem ou padding extra aqui */
 }
 
 .foto-principal-container img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; 
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
     object-position: center top; 
-    filter: brightness(0.7) blur(1px); 
+    
+    /* Filtro Suavizado: Menos desfoque e mais brilho para melhorar a qualidade percebida */
+    filter: brightness(0.9) blur(0.5px); 
+    
+    /* Remove bordas indesejadas */
+    border-radius: 0; 
 }
 
-/* --- SEÇÃO "SOBRE MIM" (Mantenha ou ajuste) --- */
+/* --- 2. SEÇÃO "SOBRE MIM" E GALERIA (Correção do Layout da Galeria) --- */
 .sobre-mim {
-    background-color: #b0c4de;
+    background-color: #b0c4de; /* Azul claro/Lavanda */
     padding: 20px 10px;
     text-align: center;
 }
 
-.galeria-grid {
-    /* Ajuste para telas maiores */
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 15px; 
-    padding: 0 50px; 
+.sobre-mim h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* --- 2. AUMENTAR QUALIDADE VISUAL DAS IMAGENS PEQUENAS --- */
-.galeria-item {
-    text-align: center;
+.galeria-grid {
+    display: grid;
+    /* CHAVE DE CORREÇÃO: Define 3 colunas padrão para garantir que caibam bem */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    padding: 0 15px; /* Padding interno para não colar nas laterais do .sobre-mim */
+    max-width: 100%; /* Garante que não ultrapasse o contêiner pai */
 }
 
 .galeria-item img {
@@ -63,41 +98,37 @@ body {
     aspect-ratio: 1 / 1; 
     object-fit: cover;
     
-    /* CHAVE 1: Borda mais grossa para destacar */
-    border: 5px solid white; /* Aumenta a espessura da borda */
-    border-radius: 8px; /* Adiciona um arredondamento suave */
-    display: block;
-    
-    /* CHAVE 2: Adiciona uma sombra sutil para dar profundidade (melhora a "qualidade visual") */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    
-    /* Efeito de transição suave ao interagir (opcional, mas profissional) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    /* Melhora visual para "qualidade" */
+    border: 4px solid white; 
+    border-radius: 8px; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.galeria-item img:hover {
-    /* Efeito ao passar o mouse */
-    transform: scale(1.05); /* Aumenta ligeiramente a imagem */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+/* --- 3. RODAPÉ/CONTATO (Ajuste para telas pequenas) --- */
+.perfil-footer {
+    background-color: #3b5998; 
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    /* Flexbox ajuda a centralizar e organizar o conteúdo */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
 
-.galeria-item p {
-    margin-top: 8px; /* Aumenta um pouco o espaçamento */
-    font-size: 1em; /* Aumenta o texto para melhor leitura */
-    color: #333;
-    font-weight: bold;
+.copyright {
+    margin-top: 10px;
+    font-size: 0.7em;
+    /* Garante que o texto de copyright quebre a linha corretamente */
+    word-wrap: break-word; 
+    max-width: 100%;
 }
 
-/* --- RODAPÉ/CONTATO E MEDIA QUERIES (Mantenha) --- */
-/* ... mantenha o restante do seu CSS aqui ... */
-
-@media (max-width: 900px) {
-    .galeria-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        padding: 0 20px;
-    }
-}
-@media (max-width: 400px) {
+/* --- MEDIA QUERIES (Ajustes para Responsividade) --- */
+@media (max-width: 550px) {
+    /* Em telas de celular, passa a galeria para 2 colunas */
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr); 
     }
