@@ -104,7 +104,3 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-background-repeat: no-repeat;
-background-attachment: fixed; /* opcional — deixa o fundo fixo ao rolar */
-/* Se estiver em uma pasta chamada imagens */
-background-image: url('imagens/fundo.jpg');
