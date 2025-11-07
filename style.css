@@ -1,3 +1,4 @@
+/* RESET E CONFIGURAÇÕES BÁSICAS */
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +8,22 @@
 
 body {
   background-color: #fff;
-  color: #000;
 }
 
+/* MENU SUPERIOR */
 header {
-  background-color: #1d2b68;
-  padding: 10px 40px;
+  background-color: #1b2d75;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .navbar {
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,49 +48,59 @@ header {
   border-radius: 5px;
 }
 
+/* ÍCONES DE REDES SOCIAIS */
 .social a img {
-  width: 25px;
-  height: 25px;
-  margin-left: 15px;
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
   filter: brightness(0) invert(1);
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 
 .social a img:hover {
   transform: scale(1.1);
 }
 
+/* SEÇÃO PRINCIPAL */
 .hero {
-  height: 80vh;
-  background-image: url('https://i.imgur.com/x3QJ8yr.jpeg'); /* coloque aqui sua imagem de fundo */
+  height: 100vh;
+  background-image: url('https://i.imgur.com/0TUPRZb.jpeg'); /* coloque aqui sua colagem */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top: 70px; /* para não cobrir o menu */
 }
 
 .overlay {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px 60px;
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px 80px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .overlay h1 {
-  font-size: 40px;
-  color: #222;
+  font-size: 42px;
+  color: #111;
+  font-weight: bold;
 }
 
+/* RODAPÉ */
 footer {
-  background-color: #1d2b68;
+  background-color: #1b2d75;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 15px 10px;
   font-size: 14px;
 }
 
 footer a {
-  color: #fff;
+  color: #b9c9ff;
+  text-decoration: none;
+}
+
+footer a:hover {
   text-decoration: underline;
 }
