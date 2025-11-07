@@ -2,100 +2,87 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Georgia", serif;
+  font-family: 'Georgia', serif;
 }
 
 body {
-  background-color: #aab7d1;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background-color: #fff;
   color: #000;
 }
 
-/* Cabeçalho */
-.perfil {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.foto-container {
-  background-color: #818cd1;
-  border-radius: 40px;
-  text-align: center;
-  padding: 20px 40px;
-}
-
-.foto {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.icones img {
-  width: 25px;
-  margin: 5px;
-}
-
-/* Botão Sobre Mim */
-.sobre {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.btn-sobre {
-  background-color: #5a64c9;
-  border: none;
-  color: white;
-  font-size: 20px;
+header {
+  background-color: #1d2b68;
   padding: 10px 40px;
-  border-radius: 30px;
-  cursor: pointer;
 }
 
-.btn-sobre:hover {
-  background-color: #444fa8;
-}
-
-/* Botões inferiores */
-.botoes {
+.navbar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.social a img {
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s;
+}
+
+.social a img:hover {
+  transform: scale(1.1);
+}
+
+.hero {
+  height: 80vh;
+  background-image: url('https://i.imgur.com/x3QJ8yr.jpeg'); /* coloque aqui sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
+  position: relative;
 }
 
-.botoes button {
-  background-color: #818cd1;
-  border: none;
-  color: #000;
-  font-size: 16px;
-  padding: 10px 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+.overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 60px;
+  border-radius: 8px;
 }
 
-.botoes button:hover {
-  background-color: #5a64c9;
-  color: rgb(0, 0, 0);
+.overlay h1 {
+  font-size: 40px;
+  color: #222;
 }
 
-/* Rodapé */
 footer {
-  background-color: #272a90;
+  background-color: #1d2b68;
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: auto;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-footer p {
-  margin: 3px 0;
+footer a {
+  color: #fff;
+  text-decoration: underline;
 }
