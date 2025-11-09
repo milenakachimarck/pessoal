@@ -57,9 +57,9 @@ header {
 }
 
 .social a img:hover {
-  transform: scale(1.1);
+ transform: scale(1.15);
+  filter: drop-shadow(0 0 5px #ffffff);
 }
-
 /* SEÇÃO PRINCIPAL */
 
 .hero {
