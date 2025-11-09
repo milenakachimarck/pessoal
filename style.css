@@ -63,7 +63,7 @@ header {
 /* SEÇÃO PRINCIPAL */
 .hero {
   height: 100vh;
-  background-image: url('https://i.imgur.com/0TUPRZb.jpeg'); /* coloque aqui sua colagem */
+  background-image: url(fotoprincipal.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
