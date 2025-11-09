@@ -53,7 +53,6 @@ header {
   width: 28px;
   height: 28px;
   margin-left: 10px;
-  filter: brightness(0) invert(1);
   transition: transform 0.3s;
 }
 
