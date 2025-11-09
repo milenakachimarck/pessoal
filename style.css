@@ -63,26 +63,45 @@ header {
 /* SEÇÃO PRINCIPAL */
 
 .hero {
-  min-height: 100vh;
-  background-image: url(fotoprincipal.jpg);
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center top;
+  position: relative;
+  height: calc(100vh - 70px); /* ajusta para não ficar escondido pelo header */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7ba5ee; /* cor de fundo para as "faixas" quando houver */
 }
 
+/* imagem em primeiro plano visual, mas atrás do overlay */
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* mantém a imagem inteira sem cortar */
+  object-position: center;  /* centra a imagem */
+  z-index: 1;
+  pointer-events: none;     /* evita que a imagem interfira em cliques */
+}
+
+/* overlay e texto ficam acima da imagem */
 .overlay {
+  position: relative;
+  z-index: 2;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 20px 80px;
   border-radius: 5px;
   text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .overlay h1 {
   font-size: 42px;
   color: #111;
   font-weight: bold;
+  margin: 0;
 }
-
 /* RODAPÉ */
 footer {
   background-color: #1b2d75;
