@@ -61,16 +61,13 @@ header {
 }
 
 /* SEÇÃO PRINCIPAL */
+
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(fotoprincipal.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 70px; /* para não cobrir o menu */
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .overlay {
