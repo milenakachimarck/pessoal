@@ -1,105 +1,111 @@
 /* RESET E CONFIGURAÇÕES BÁSICAS */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Georgia', serif;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Georgia', serif;
 }
 
+/* CORREÇÃO 1: Fundo do Body para a mesma cor do Header */
 body {
-  background-color: #1b2d75;
+ background-color: #1b2d75; 
 }
 
 /* MENU SUPERIOR */
 header {
-  background-color: #1b2d75;
-  width: 100%;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
+ background-color: #1b2d75;
+ width: 100%;
+ padding: 10px 0;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 100;
 }
 
 .navbar {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+ width: 90%;
+ margin: auto;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+ list-style: none;
+ display: flex;
+ gap: 25px;
 }
 
 .menu li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  padding: 8px 12px;
-  transition: background 0.3s;
+ text-decoration: none;
+ color: white;
+ font-size: 18px;
+ padding: 8px 12px;
+ transition: background 0.3s;
 }
 
 .menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+ background-color: rgba(255, 255, 255, 0.2);
+ border-radius: 5px;
 }
 
 /* ÍCONES DE REDES SOCIAIS */
 .social a img {
-  width: 28px;
-  height: 28px;
-  margin-left: 10px;
-  transition: transform 0.3s;
+ width: 28px;
+ height: 28px;
+ margin-left: 10px;
+ transition: transform 0.3s;
 }
 
 .social a img:hover {
-  transform: scale(1.1);
+ transform: scale(1.1);
 }
 
-/* SEÇÃO PRINCIPAL */
+/* SEÇÃO PRINCIPAL - HERO */
 .hero {
-  height: 100vh;
-  background-image: url(fotoprincipal.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 70px; /* para não cobrir o menu */
+ height: 100vh;
+ background-image: url(fotoprincipal.jpg);
+ 
+ /* CORREÇÃO 2: Propriedades para não cortar a imagem */
+ background-size: contain; /* Garante que a imagem inteira seja visível */
+ background-repeat: no-repeat; /* Impede a repetição se houver espaço livre */
+
+ background-position: center; /* Centraliza a imagem */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ padding-top: 70px; /* Mantém o espaçamento para não cobrir o menu fixo */
 }
+
 
 .overlay {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 20px 80px;
-  border-radius: 5px;
-  text-align: center;
+ background-color: rgba(255, 255, 255, 0.85);
+ padding: 20px 80px;
+ border-radius: 5px;
+ text-align: center;
 }
 
 .overlay h1 {
-  font-size: 42px;
-  color: #111;
-  font-weight: bold;
+ font-size: 42px;
+ color: #111;
+ font-weight: bold;
 }
 
 /* RODAPÉ */
 footer {
-  background-color: #1b2d75;
-  color: white;
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 14px;
+ background-color: #1b2d75;
+ color: white;
+ text-align: center;
+ padding: 15px 10px;
+ font-size: 14px;
 }
 
 footer a {
-  color: #b9c9ff;
-  text-decoration: none;
+ color: #b9c9ff;
+ text-decoration: none;
 }
 
 footer a:hover {
-  text-decoration: underline;
+ text-decoration: underline;
 }
