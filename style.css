@@ -57,23 +57,20 @@ header {
 }
 
 .social a img:hover {
- transform: scale(1.15);
-  filter: drop-shadow(0 0 5px #ffffff);
+  transform: scale(1.1);
 }
-/* SEÇÃO PRINCIPAL */
 
 /* SEÇÃO PRINCIPAL */
 .hero {
   height: 100vh;
   background-image: url(fotoprincipal.jpg);
-  background-size: cover;         /* preenche a tela toda */
-  background-position: top center; /* mostra mais do topo (não corta seu rosto) */
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding-top: 70px; /* para não ficar escondido atrás do menu fixo */
+  padding-top: 70px; /* para não cobrir o menu */
 }
 
 .overlay {
@@ -81,14 +78,14 @@ header {
   padding: 20px 80px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .overlay h1 {
   font-size: 42px;
   color: #111;
   font-weight: bold;
-  margin: 0;
+}
+
 /* RODAPÉ */
 footer {
   background-color: #1b2d75;
