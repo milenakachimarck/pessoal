@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Milena Kachimarck</title>
-  <link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Milena Kachimarck</title>
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- MENU SUPERIOR -->
-  <header>
-    <nav class="navbar">
-      <ul class="menu">
-        <li><a href="#">sobre mim</a></li>
-        <li><a href="#">hobbies</a></li>
-        <li><a href="#">família</a></li>
-        <li><a href="#">amigos</a></li>
-        <li><a href="#">curso técnico</a></li>
-        <li><a href="#">pets</a></li>
-      </ul>
+ <header>
+ <nav class="navbar">
+ <ul class="menu">
+ <li><a href="#sobremim">sobre mim</a></li>
+ <li><a href="#hobbies">hobbies</a></li>
+ <li><a href="#familia">família</a></li>
+ <li><a href="#amigos">amigos</a></li>
+ <li><a href="#curso">curso técnico</a></li>
+<li><a href="#pets">pets</a></li>
+</ul>
 
-      <div class="social">
-  <a href="https://www.instagram.com/milenakzxl" target="_blank">
-    <img src="instagram (1).png" alt="Instagram">
-  </a>
-  <a href="https://wa.me/5599574841" target="_blank">
-    <img src="whatsapp (2).png" alt="WhatsApp">
-  </a>
-</div>
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main>
-    <section class="hero">
-      <div class="overlay">
-        <h1>Milena Kachimarck</h1>
-      </div>
-    </section>
-  </main>
+<div class="social">
+ <a href="https://www.instagram.com/milenakzxl" target="_blank">
+ <img src="instagram (1).png" alt="Instagram">
+ </a>
+ <a href="https://wa.me/5599574841" target="_blank">
+ <img src="whatsapp (2).png" alt="WhatsApp">
+ </a>
+ </div>
+ </nav> 
+ </header>  <main>
+ <section class="hero">
+ <div class="overlay">
+ <h1>Milena Kachimarck</h1>
+ </div>
+ </section>
+ </main>
 
-  <!-- RODAPÉ -->
-  <footer>
-    <p>2025 | Todos os Direitos Reservados a Milena Kachimarck </p>
-    <p>
-      <a href="#">Política de Privacidade</a> | 
-      <a href="#">Proteção de dados</a> | 
-      <a href="#">Encarrregado de dados</a>
-    </p>
-  </footer>
+ <footer>
+ <p>2025 | Todos os Direitos Reservados a Milena Kachimarck </p>
+ <p>
+ <a href="#">Política de Privacidade</a> | 
+ <a href="#">Proteção de dados</a> | 
+ <a href="#">Encarrregado de dados</a>
+ </p>
+ </footer>
+<script>
+// Exemplo: rolar suavemente para seções
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', e => {
+   e.preventDefault();
+   const id = e.target.getAttribute('href');
+   document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
 </body>
 </html>
