@@ -50,15 +50,15 @@ header {
 }
 
 /* ÍCONES DE REDES SOCIAIS */
-.social a img {
- width: 28px;
- height: 28px;
- margin-left: 10px;
- transition: transform 0.3s;
+.social a {
+    font-size: 28px; /* Tamanho do ícone */
+    margin-left: 15px; /* Espaçamento entre os ícones */
+    transition: color 0.3s, transform 0.3s;
 }
 
-.social a img:hover {
- transform: scale(1.1);
+.social a:hover {
+    color: #b9c9ff; /* Cor ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .hero {
