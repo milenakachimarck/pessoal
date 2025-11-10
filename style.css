@@ -105,3 +105,23 @@ footer a {
 footer a:hover {
  text-decoration: underline;
 }
+/* Estilo para o conteúdo das páginas internas (hobbies, familia, etc.) */
+.content-page {
+ /* Garante que o conteúdo não fique escondido sob o header fixo */
+ padding-top: 100px; 
+ padding-bottom: 50px;
+ width: 80%;
+ margin: auto;
+ min-height: 85vh; /* Garante que o rodapé fique lá embaixo */
+ background-color: white; /* Cor de fundo para o conteúdo */
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 30px;
+}
+
+.content-page h2 {
+ color: #1b2d75;
+ margin-bottom: 20px;
+ border-bottom: 2px solid #b9c9ff;
+ padding-bottom: 10px;
+}
