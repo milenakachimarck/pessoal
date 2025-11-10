@@ -22,7 +22,17 @@ header {
     left: 0;
     z-index: 1000;
     border-bottom: 1px solid #eee; /* Linha sutil para separar */
+   
+    .profile-icon {
+    width: 30px; /* Define o tamanho da imagem (ajuste se quiser maior) */
+    height: 30px;
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+    margin-right: 10px; /* Adiciona espaço entre a foto e o seu nome */
+    border: 1px solid #eee; /* Opcional: Borda sutil */
 }
+}
+
 
 .navbar {
     width: 90%;
@@ -34,6 +44,17 @@ header {
 }
 
 .logo {
+    display: flex; /* Alinha a imagem e o texto horizontalmente */
+    align-items: center; /* Centraliza a imagem e o texto verticalmente */
+    
+    /* Mantenha os estilos de texto */
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+    letter-spacing: 2px;
+}
+/* Se precisar estilizar só o texto, use .logo span */
+.logo span {
     font-weight: 700;
     font-size: 16px;
     color: #111;
