@@ -157,3 +157,32 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* --- ESTILOS ESPECÍFICOS PARA PÁGINAS INTERNAS --- */
+
+/* Cor do link ativo para saber em qual página você está */
+.active-page {
+    color: #008080 !important; /* Sua cor de destaque */
+}
+
+/* 1. ESTILO HERO FAMÍLIA */
+#familia-hero {
+    /* MUDAR: Coloque o nome da sua imagem de fundo para Família aqui */
+    background-image: url('imagem-fundo-familia.jpg');
+}
+
+/* 2. ESTILO HERO AMIGOS */
+#amigos-hero {
+    /* MUDAR: Coloque o nome da sua imagem de fundo para Amigos aqui */
+    background-image: url('imagem-fundo-amigos.jpg');
+}
+
+/* Se você também tiver o Sobre Mim em 'sobremim.html', o estilo ficaria assim: */
+#sobremim-hero {
+    background-image: url('imagem-fundo-sobremim.jpg');
+}
+/* 3. ESTILO HERO CURSO TÉCNICO */
+#cursotec-hero {
+    /* MUDAR: Coloque o nome da sua imagem de fundo para Curso Técnico aqui */
+    background-image: url('imagem-fundo-cursotec.jpg');
+}
