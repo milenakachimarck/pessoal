@@ -145,3 +145,40 @@ footer a:hover {
  border-bottom: 2px solid #b9c9ff;
  padding-bottom: 10px;
 }
+
+/* --- ESTILO PARA PÁGINAS INTERNAS (HOBBIES, FAMÍLIA, etc.) --- */
+
+/* Ajuste o padding do hero para páginas internas */
+.content-hero {
+    height: 60vh; /* Altura menor para páginas internas */
+    padding-top: 70px; 
+}
+
+/* 1. HOBBIES: Defina a imagem específica para a página de Hobbies */
+#hobbies-hero {
+    /* MUDAR: Coloque o nome do seu arquivo de imagem de Hobbies aqui! */
+    background-image: url(imagem-hobbies.jpg); 
+}
+
+/* 2. FAMÍLIA: Defina a imagem específica para a página de Família */
+#familia-hero {
+    /* MUDAR: Coloque o nome do seu arquivo de imagem de Família aqui! */
+    background-image: url(imagem-familia.jpg); 
+}
+
+/* Estilo para Botão "Voltar" */
+.btn-voltar {
+    display: inline-block;
+    background-color: #1b2d75;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #b9c9ff;
+    color: #1b2d75;
+}
