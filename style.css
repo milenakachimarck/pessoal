@@ -3,7 +3,7 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: 'Arial', sans-serif;
+ font-family: 'Poppins', sans-serif;
 }
 
 /* CORREÇÃO 1: Fundo do Body para a mesma cor do Header */
@@ -98,7 +98,7 @@ header {
 }
 
 .overlay {
- background-color: rgba(255, 255, 255, 0.85);
+ background-color: rgba(165, 186, 252, 0.9);
  padding: 20px 80px;
  border-radius: 5px;
  text-align: center;
