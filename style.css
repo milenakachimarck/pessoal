@@ -82,7 +82,7 @@ header {
     transform: scale(1.1);
 }
 .hero {
- height: 75vh; 
+ height: 85vh; 
  background-image: url(fotoprincipal.jpg);
  background-size: cover; /
  background-repeat:no-repeat;
