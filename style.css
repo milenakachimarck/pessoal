@@ -50,15 +50,33 @@ header {
 }
 
 /* ÍCONES DE REDES SOCIAIS */
-.social a {
-    font-size: 28px; /* Tamanho do ícone */
-    margin-left: 15px; /* Espaçamento entre os ícones */
-    transition: color 0.3s, transform 0.3s;
+
+/* 1. Alinha o container .social verticalmente no centro (opcional, mas bom) */
+.social {
+    display: flex;
+    align-items: center; /* Garante que os ícones fiquem alinhados com o menu */
 }
 
-.social a:hover {
-    color: #b9c9ff; /* Cor ao passar o mouse */
+/* 2. Redimensiona as IMAGENS (PNGs) usadas para os ícones */
+.social a img {
+    /* **ATENÇÃO: Este é o ajuste crítico para o tamanho!** */
+    width: 30px; 
+    height: 30px;
+    
+    margin-left: 15px;
+    transition: transform 0.3s;
+}
+
+.social a img:hover {
     transform: scale(1.1);
+    color: #b9c9ff; /* Cor ao passar o mouse */
+}
+
+/* 3. Se o ícone do WhatsApp for um ícone Font Awesome (tag <i>) */
+.social a i {
+    font-size: 30px; /* Tamanho do ícone */
+    margin-left: 15px; /* Espaçamento entre os ícones */
+    transition: color 0.3s, transform 0.3s;
 }
 
 .hero {
