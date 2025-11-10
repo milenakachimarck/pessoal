@@ -22,15 +22,23 @@ header {
     left: 0;
     z-index: 1000;
     border-bottom: 1px solid #eee; /* Linha sutil para separar */
-   
-    .profile-icon {
-    width: 30px; /* Define o tamanho da imagem (ajuste se quiser maior) */
-    height: 30px;
-    border-radius: 50%; /* Transforma a imagem em um círculo */
-    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
-    margin-right: 10px; /* Adiciona espaço entre a foto e o seu nome */
-    border: 1px solid #eee; /* Opcional: Borda sutil */
+
 }
+ .profile-icon {
+ width: 30px; 
+ height: 30px;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-right: 10px;
+ border: 1px solid #eee;
+ cursor: pointer; 
+  transition: transform 0.2s ease-in-out; 
+}
+
+/* NOVA CLASSE PARA AMPLIAÇÃO */
+.profile-icon.enlarged {
+ transform: scale(3); /* Aumentei para 3x para ser mais visível */
+ z-index: 1001; /* Garante que ela fique acima de tudo ao ampliar */
 }
 
 .navbar {
