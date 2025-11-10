@@ -1,199 +1,138 @@
 /* RESET E CONFIGURAÇÕES BÁSICAS */
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Aplicando a fonte Lato como simulacro de Avenir Light */
+    font-family: 'Lato', sans-serif; 
 }
 
-/* CORREÇÃO 1: Fundo do Body para a mesma cor do Header */
+/* Corpo da página */
 body {
- background-color: #1b2d75; 
+    background-color: #f0f0f0;
 }
 
-/* MENU SUPERIOR */
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
 header {
- background-color: #1b2d75;
- width: 100%;
- padding: 10px 0;
- position: fixed;
- top: 0;
- left: 0;
- z-index: 100;
+    background-color: #ffffff; /* Fundo branco ou transparente */
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee; /* Linha sutil para separar */
 }
 
 .navbar {
- width: 90%;
- margin: auto;
- display: flex;
- justify-content: space-between;
- align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111;
+    letter-spacing: 2px;
 }
 
 .menu {
- list-style: none;
- display: flex;
- gap: 25px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .menu li a {
- text-decoration: none;
- color: white;
- font-size: 18px;
- padding: 8px 12px;
- transition: background 0.3s;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: color 0.3s;
 }
 
 .menu li a:hover {
- background-color: rgba(255, 255, 255, 0.2);
- border-radius: 5px;
+    color: #008080; /* Cor de destaque (teal) */
 }
 
-/* ÍCONES DE REDES SOCIAIS */
-
-/* ÍCONES DE REDES SOCIAIS */
-.social {
-    display: flex;
-    align-items: center; 
-}
-
-/* 1. Estilo para Ícones Font Awesome (Tag <i> - usado para Instagram) */
-.social a i {
-    color: white; /* Garante que o ícone do Insta fique branco */
-    font-size: 30px; 
+.social i {
+    font-size: 18px;
+    color: #333;
     margin-left: 15px;
-    transition: transform 0.3s;
+    transition: color 0.3s;
 }
 
-.social a i:hover {
-    color: #b9c9ff; 
-    transform: scale(1.1);
+.social i:hover {
+    color: #008080;
 }
 
-/* 2. Estilo para IMAGENS (Tag <img> - usado para WhatsApp) */
-.social a img {
-    width: 30px; 
-    height: 30px;
-    margin-left: 15px;
-    transition: transform 0.3s;
-}
-
-.social a img:hover {
-    transform: scale(1.1);
-}
+/* --- SEÇÃO HERO (IMAGEM E TEXTO) --- */
 .hero {
- height: 85vh; 
- background-image: url(fotoprincipal.jpg);
- background-size: cover; 
- background-repeat:no-repeat;
- background-position:center;
- display:flex;
- align-items:center;
- justify-content:center;
- position: relative;
- padding-top: 70px; 
- image-rendering: -webkit-optimize-contrast; 
-    image-rendering: crisp-edges;
-    will-change: transform;
+    height: 100vh; /* Ocupa a altura total da tela */
+    background-image: url(fotoprincipal.jpg); /* MUDAR: Coloque o nome da sua imagem aqui */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; /* Centraliza o bloco de texto verticalmente */
+    position: relative;
+    padding-left: 5%; /* Padding para afastar o texto da borda */
 }
 
-.overlay {
- background-color: rgba(165, 186, 252, 0.9);
- padding: 20px 80px;
- border-radius: 5px;
- text-align: center;
+/* Sobreposição de cor da imagem (o tom esverdeado/azulado) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cor de sobreposição (Teal com transparência) */
+    background-color: rgba(0, 128, 128, 0.5); 
+    z-index: 1;
 }
 
-.overlay h1 {
- font-size: 42px;
- color: #111;
- font-weight: bold;
+/* O bloco de texto em destaque */
+.text-box {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima do overlay */
+    color: #ffffff;
+    max-width: 450px; /* Limita a largura do texto */
+    padding-top: 100px; /* Ajuste para descer um pouco, já que o header é fixo */
 }
 
-/* RODAPÉ */
-footer {
- background-color: #1b2d75;
- color: white;
- text-align: center;
- padding: 15px 10px;
- font-size: 14px;
+.main-title {
+    font-size: 60px;
+    font-weight: 900; /* Extra bold */
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #111; /* O título é preto na imagem */
 }
 
-footer a {
- color: #b9c9ff;
- text-decoration: none;
+.title-line {
+    width: 80px;
+    height: 3px;
+    background-color: #111; /* Cor da linha */
+    border: none;
+    margin-bottom: 20px;
 }
 
-footer a:hover {
- text-decoration: underline;
-}
-/* Estilo para o conteúdo das páginas internas (hobbies, familia, etc.) */
-.content-page {
- /* Garante que o conteúdo não fique escondido sob o header fixo */
- padding-top: 100px; 
- padding-bottom: 50px;
- width: 80%;
- margin: auto;
- min-height: 85vh; /* Garante que o rodapé fique lá embaixo */
- background-color: white; /* Cor de fundo para o conteúdo */
- border-radius: 10px;
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- padding: 30px;
+.text-box p {
+    font-size: 18px;
+    font-weight: 300; /* Light */
+    line-height: 1.6;
+    color: #333; /* O parágrafo é cinza escuro na imagem */
 }
 
-.content-page h2 {
- color: #1b2d75;
- margin-bottom: 20px;
- border-bottom: 2px solid #b9c9ff;
- padding-bottom: 10px;
-}
-
-/* --- ESTILO PARA PÁGINAS INTERNAS (HOBBIES, FAMÍLIA, etc.) --- */
-
-/* Ajuste o padding do hero para páginas internas */
-.content-hero {
-    height: 60vh; /* Altura menor para páginas internas */
-    padding-top: 70px; 
-}
-
-/* 1. HOBBIES:*/
-#hobbies-hero {
-    /* MUDAR: Coloque o nome do seu arquivo de imagem de Hobbies aqui! */
-    background-image: url(fotoprincipal.jpg); 
-}
-
-/* 2. FAMÍLIA: */
-#familia-hero {
-    /* MUDAR: Coloque o nome do seu arquivo de imagem de Família aqui! */
-    background-image: url(imagem-familia.jpg); 
-}
-/* 3. AMIGOS: */
-#amigos-hero {
-    background-image: url(imagem-amigos.jpg); 
-}
-/* 4.curso técnico: */
-#curso-hero {
-    background-image: url(imagem-cursotec.jpg); 
-}
-/* 6. sobre mim */
-#sobremim-hero {
-    background-image: url(imagem-sobremim.jpg); 
-}
-
-
-/* Estilo para Botão "Voltar" */
-.btn-voltar {
-    display: inline-block;
-    background-color: #1b2d75;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-.btn-voltar:hover {
-    background-color: #b9c9ff;
-    color: #1b2d75;
+/* --- SEÇÕES ABAIXO DO HERO --- */
+.content {
+    min-height: 50vh;
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
