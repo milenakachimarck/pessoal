@@ -35,11 +35,11 @@ header {
 
 
 .navbar {
-    width: 90%;
-    max-width: 1200px;
+    width: 95%; /* Aumenta a largura para dar mais espaço */
+    max-width: 1300px; /* Um pouco maior */
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espaça o logo, menu e ícones */
     align-items: center;
 }
 
@@ -52,6 +52,7 @@ header {
     font-size: 16px;
     color: #111;
     letter-spacing: 2px;
+    
 }
 /* Se precisar estilizar só o texto, use .logo span */
 .logo span {
@@ -60,11 +61,14 @@ header {
     color: #111;
     letter-spacing: 2px;
 }
-
+/* No seu style.css, encontre .menu e substitua por este */
 .menu {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 30px; 
+    flex-grow: 1; /* Permite que o menu cresça para ocupar o espaço central */
+    justify-content: center; /* Centraliza os botões de fato */
+    margin: 0 40px; /* Adiciona margem dos lados para não encostar no logo e nos ícones */
 }
 
 .menu li a {
@@ -86,6 +90,9 @@ header {
     color: #333;
     margin-left: 15px;
     transition: color 0.3s;
+     display: flex;
+    align-items: center;
+    gap: 10px; 
 }
 
 .social i:hover {
