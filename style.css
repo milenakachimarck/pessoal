@@ -193,3 +193,21 @@ header {
     /* MUDAR: Coloque o nome da sua imagem de fundo para Curso Técnico aqui */
     background-image: url('imagem-fundo-cursotec.jpg');
 }
+
+.profile-icon {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid #eee;
+    
+    /* Adicione estas linhas para o efeito de clique */
+    cursor: pointer; /* Indica que é clicável */
+    transition: transform 0.2s ease-in-out; /* Transição suave */
+}
+
+/* Nova classe CSS para o estado "aumentado" */
+.profile-icon.enlarged {
+    transform: scale(2); /* Aumenta o tamanho em 200% */
+}

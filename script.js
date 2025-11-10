@@ -13,3 +13,14 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = 'none';
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const profileImg = document.getElementById('profile-img');
+
+    if (profileImg) {
+        profileImg.addEventListener('click', () => {
+            // Alterna a classe 'enlarged' ao ser clicado
+            profileImg.classList.toggle('enlarged'); 
+        });
+    }
+});
