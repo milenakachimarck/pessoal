@@ -1,20 +1,39 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    // ESTA LINHA AGORA VAI FUNCIONAR PORQUE VOCÊ ADICIONOU O ID NO HTML
-    const profileImg = document.getElementById('profile-img');
+    // 1. Elementos do Modal
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modal-img");
+    const profileImg = document.getElementById("profile-img");
+    const closeBtn = document.getElementsByClassName("close-btn")[0];
 
-    // Verifica se a imagem foi encontrada antes de adicionar o evento
     if (profileImg) {
-        profileImg.addEventListener('click', () => {
-            // Alterna a classe 'enlarged' ao ser clicado
-            profileImg.classList.toggle('enlarged'); 
-        });
+        // 2. ABRIR O MODAL ao clicar na foto de perfil
+        profileImg.onclick = function() {
+            modal.style.display = "block";
+            
+            // Define o src e o alt da imagem grande
+            modalImg.src = this.src; 
+            modalImg.alt = this.alt;
+        }
     }
 
-    // Seu código de scroll continua aqui...
+    // 3. FECHAR O MODAL ao clicar no "x"
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // 4. FECHAR O MODAL ao clicar fora da imagem
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    // --- SEU CÓDIGO DE SCROLL CONTINUA AQUI ---
     const header = document.querySelector('header');
-    const heroHeight = window.innerHeight * 0.8; 
+    const heroHeight = window.innerHeight * 0.8;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > heroHeight) {
@@ -26,3 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+    
