@@ -50,16 +50,6 @@
  <a href="#">Encarrregado de dados</a>
  </p>
  </footer>
-<script>
-// Exemplo: rolar suavemente para seções
-document.querySelectorAll('.menu a').forEach(link => {
-  link.addEventListener('click', e => {
-   e.preventDefault();
-   const id = e.target.getAttribute('href');
-   document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
 
 </body>
 </html>
