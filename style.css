@@ -85,14 +85,16 @@ header {
  height: 100vh; 
  background-image: url(fotoprincipal.jpg);
  background-size: cover; /
- background-repeat:no-repeat
-
+ background-repeat:no-repeat;
  background-position:center;
  display: flex;
  align-items: center;
  justify-content: center;
  position: relative;
  padding-top: 70px; 
+ image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+    will-change: transform;
 }
 
 .overlay {
