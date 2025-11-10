@@ -109,7 +109,7 @@ header {
 /* --- SEÇÃO HERO (IMAGEM E TEXTO) --- */
 .hero {
     height: 100vh; /* Ocupa a altura total da tela */
-    background-image: url(fotoprincipal.jpg); /* MUDAR: Coloque o nome da sua imagem aqui */
+    background-image: url(principal.png); /* MUDAR: Coloque o nome da sua imagem aqui */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
