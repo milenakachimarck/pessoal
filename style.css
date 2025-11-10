@@ -51,41 +51,43 @@ header {
 
 /* ÍCONES DE REDES SOCIAIS */
 
-/* 1. Alinha o container .social verticalmente no centro (opcional, mas bom) */
+/* ÍCONES DE REDES SOCIAIS */
 .social {
     display: flex;
-    align-items: center; /* Garante que os ícones fiquem alinhados com o menu */
+    align-items: center; 
 }
 
-/* 2. Redimensiona as IMAGENS (PNGs) usadas para os ícones */
+/* 1. Estilo para Ícones Font Awesome (Tag <i> - usado para Instagram) */
+.social a i {
+    color: white; /* Garante que o ícone do Insta fique branco */
+    font-size: 30px; 
+    margin-left: 15px;
+    transition: transform 0.3s;
+}
+
+.social a i:hover {
+    color: #b9c9ff; 
+    transform: scale(1.1);
+}
+
+/* 2. Estilo para IMAGENS (Tag <img> - usado para WhatsApp) */
 .social a img {
-    /* **ATENÇÃO: Este é o ajuste crítico para o tamanho!** */
     width: 30px; 
     height: 30px;
-    
     margin-left: 15px;
     transition: transform 0.3s;
 }
 
 .social a img:hover {
     transform: scale(1.1);
-    color: #b9c9ff; /* Cor ao passar o mouse */
 }
-
-/* 3. Se o ícone do WhatsApp for um ícone Font Awesome (tag <i>) */
-.social a i {
-    font-size: 30px; /* Tamanho do ícone */
-    margin-left: 15px; /* Espaçamento entre os ícones */
-    transition: color 0.3s, transform 0.3s;
-}
-
 .hero {
  height: 100vh; 
  background-image: url(fotoprincipal.jpg);
  background-size: cover; /
- background-repeat: no-repeat; 
+ background-repeat:no-repeat
 
- background-position: center 40%; 
+ background-position:center;
  display: flex;
  align-items: center;
  justify-content: center;
