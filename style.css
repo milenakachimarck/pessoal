@@ -84,12 +84,12 @@ header {
 .hero {
  height: 85vh; 
  background-image: url(fotoprincipal.jpg);
- background-size: cover; /
+ background-size: cover; 
  background-repeat:no-repeat;
  background-position:center;
- display: flex;
- align-items: center;
- justify-content: center;
+ display:flex;
+ align-items:center;
+ justify-content:center;
  position: relative;
  padding-top: 70px; 
  image-rendering: -webkit-optimize-contrast; 
@@ -156,17 +156,30 @@ footer a:hover {
     padding-top: 70px; 
 }
 
-/* 1. HOBBIES: Defina a imagem específica para a página de Hobbies */
+/* 1. HOBBIES:*/
 #hobbies-hero {
     /* MUDAR: Coloque o nome do seu arquivo de imagem de Hobbies aqui! */
     background-image: url(imagem-hobbies.jpg); 
 }
 
-/* 2. FAMÍLIA: Defina a imagem específica para a página de Família */
+/* 2. FAMÍLIA: */
 #familia-hero {
     /* MUDAR: Coloque o nome do seu arquivo de imagem de Família aqui! */
     background-image: url(imagem-familia.jpg); 
 }
+/* 3. AMIGOS: */
+#amigos-hero {
+    background-image: url(imagem-amigos.jpg); 
+}
+/* 4.curso técnico: */
+#curso-hero {
+    background-image: url(imagem-cursotec.jpg); 
+}
+/* 6. sobre mim */
+#sobremim-hero {
+    background-image: url(imagem-sobremim.jpg); 
+}
+
 
 /* Estilo para Botão "Voltar" */
 .btn-voltar {
