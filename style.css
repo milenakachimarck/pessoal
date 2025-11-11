@@ -159,9 +159,10 @@ header {
 
 .text-box p {
     font-size: 18px;
-    font-weight: 300; /* Light */
+   font-weight: 700; 
     line-height: 1.6;
-    color: #000000; /* O parágrafo é cinza escuro na imagem */
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 /* --- SEÇÕES ABAIXO DO HERO --- */
