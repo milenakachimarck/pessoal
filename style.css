@@ -194,7 +194,7 @@ header {
 /* 3. ESTILO HERO CURSO TÉCNICO */
 #cursotec-hero {
     /* MUDAR: Coloque o nome da sua imagem de fundo para Curso Técnico aqui */
-    background-image: url(tec.png);
+    background-image: url('tec.png');
 }
 
 .profile-icon {
