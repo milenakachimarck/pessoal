@@ -191,14 +191,10 @@ header {
     background-image: url('imagem-fundo-amigos.jpg');
 }
 
-/* Se você também tiver o Sobre Mim em 'sobremim.html', o estilo ficaria assim: */
-#sobremim-hero {
-    background-image: url('imagem-fundo-sobremim.jpg');
-}
 /* 3. ESTILO HERO CURSO TÉCNICO */
 #cursotec-hero {
     /* MUDAR: Coloque o nome da sua imagem de fundo para Curso Técnico aqui */
-    background-image: url('imagem-fundo-cursotec.jpg');
+    background-image: url(tec.png);
 }
 
 .profile-icon {
