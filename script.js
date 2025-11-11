@@ -1,4 +1,10 @@
 
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Elementos do Modal
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modal-img");
+    const profileImg = document.getElementById("profile-img");
+    const closeBtn = document.getElementsByClassName("close-btn")[0];
     document.addEventListener('DOMContentLoaded', () => {
     // ... Código para o modal da foto de perfil ...
 
