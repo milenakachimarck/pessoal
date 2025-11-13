@@ -90,4 +90,24 @@ if (cursoHero) {
 }
 // --- FIM DO CÓDIGO DE CARROSSEL ---
 });
-    
+    // --- INTERATIVIDADE JAVASCRIPT PARA HOVER LIGHTBOX (PÁGINA AMIGOS) ---
+
+const lightboxItems = document.querySelectorAll('.hover-lightbox');
+
+if (lightboxItems.length > 0) {
+    lightboxItems.forEach(item => {
+        
+        // Evento: Mouse entra no elemento (HOVER ON)
+        item.addEventListener('mouseenter', () => {
+            // Adiciona a classe que aplica o zoom e z-index alto via CSS
+            item.classList.add('is-hovered'); 
+        });
+
+        // Evento: Mouse sai do elemento (HOVER OFF)
+        item.addEventListener('mouseleave', () => {
+            // Remove a classe para que a imagem volte ao normal
+            item.classList.remove('is-hovered');
+        });
+    });
+}
+// --- FIM DO CÓDIGO HOVER LIGHTBOX JS ---
