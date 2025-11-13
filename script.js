@@ -80,7 +80,7 @@ if (cursoHero) {
     }
 
     // Inicia o carrossel, mudando a imagem a cada 5 segundos (5000ms)
-    setInterval(changeCursoBackground, 5000); 
+    setInterval(changeCursoBackground, 2000); 
 }
 });
     
