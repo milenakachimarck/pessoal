@@ -3,26 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Aplicando a fonte Lato como simulacro de Avenir Light */
     font-family: 'Lato', sans-serif; 
 }
 
-/* Corpo da página */
 body {
     background-color: #f0f0f0;
 }
-
-/* --- CABEÇALHO E NAVEGAÇÃO --- */
 header {
-    background-color: #ffffff; /* Fundo branco ou transparente */
+    background-color: #ffffff; 
     width: 100%;
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #eee; /* Linha sutil para separar */
-
+    border-bottom: 1px solid #eee;
 }
  .profile-icon {
  width: 30px; 
@@ -35,10 +30,9 @@ header {
   transition: transform 0.2s ease-in-out; 
 }
 
-/* NOVA CLASSE PARA AMPLIAÇÃO */
 .profile-icon.enlarged {
- transform: scale(3); /* Aumentei para 3x para ser mais visível */
- z-index: 1001; /* Garante que ela fique acima de tudo ao ampliar */
+ transform: scale(3); 
+ z-index: 1001; 
 }
 
 .navbar {
@@ -46,29 +40,26 @@ header {
     max-width: 1300px;
     margin: auto;
     display: flex;
-    justify-content: space-between; /* Garante que os 3 blocos se separem */
+    justify-content: space-between; 
     align-items: center;
 }
 
 .logo {
-    display: flex; /* Alinha a imagem e o texto horizontalmente */
-    align-items: center; /* Centraliza a imagem e o texto verticalmente */
-    
-    /* Mantenha os estilos de texto */
+    display: flex; 
+    align-items: center; 
     font-weight: 700;
     font-size: 16px;
     color: #111;
     letter-spacing: 2px;
     
 }
-/* Se precisar estilizar só o texto, use .logo span */
 .logo span {
     font-weight: 700;
     font-size: 16px;
     color: #111;
     letter-spacing: 2px;
 }
-/* GARANTE QUE O MENU OCUPE O CENTRO */
+
 .menu {
     list-style: none;
     display: flex;
@@ -89,7 +80,7 @@ header {
 }
 
 .menu li a:hover {
-    color: #008080; /* Cor de destaque (teal) */
+    color: #008080; 
 }
 
 .social {
@@ -108,18 +99,17 @@ header {
 
 /* --- SEÇÃO HERO (IMAGEM E TEXTO) --- */
 .hero {
-    height: 100vh; /* Ocupa a altura total da tela */
-    background-image: url(principal.png); /* MUDAR: Coloque o nome da sua imagem aqui */
+    height: 100vh; 
+    background-image: url(principal.png); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center; /* Centraliza o bloco de texto verticalmente */
+    align-items: center;
     position: relative;
-    padding-left: 5%; /* Padding para afastar o texto da borda */
+    padding-left: 5%; 
+    transition: background-image 1s ease-in-out;
 }
-
-/* Sobreposição de cor da imagem (o tom esverdeado/azulado) */
 .hero::before {
     content: '';
     position: absolute;
@@ -127,36 +117,30 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Cor de sobreposição (Teal com transparência) */
     background-color: rgba(0, 128, 128, 0.5); 
     z-index: 1;
 }
-
-/* O bloco de texto em destaque */
 .text-box {
     position: relative;
-    z-index: 2; /* Garante que o texto fique acima do overlay */
+    z-index: 2;
     color: #ffffff;
-    max-width: 450px; /* Limita a largura do texto */
-    padding-top: 100px; /* Ajuste para descer um pouco, já que o header é fixo */
+    max-width: 450px; 
+    padding-top: 100px; 
 }
-
 .main-title {
     font-size: 60px;
-    font-weight: 900; /* Extra bold */
+    font-weight: 900; 
     line-height: 1;
     margin-bottom: 20px;
-    color: #111; /* O título é preto na imagem */
+    color: #111; 
 }
-
 .title-line {
     width: 100px;
     height: 3px;
-    background-color: #111; /* Cor da linha */
+    background-color: #111; 
     border: none;
     margin-bottom: 20px;
 }
-
 .text-box p {
     font-size: 18px;
    font-weight: 700; 
@@ -177,24 +161,21 @@ header {
 
 /* Cor do link ativo para saber em qual página você está */
 .active-page {
-    color: #008080 !important; /* Sua cor de destaque */
+    color: #008080 !important; 
 }
 
 /* 1. ESTILO HERO FAMÍLIA */
 #familia-hero {
-    /* MUDAR: Coloque o nome da sua imagem de fundo para Família aqui */
     background-image: url('Capturar.PNG');
 }
 
 /* 2. ESTILO HERO AMIGOS */
 #amigos-hero {
-    /* MUDAR: Coloque o nome da sua imagem de fundo para Amigos aqui */
     background-image: url('amgcolagem.png');
 }
 
 /* 3. ESTILO HERO CURSO TÉCNICO */
 #cursotec-hero {
-    /* MUDAR: Coloque o nome da sua imagem de fundo para Curso Técnico aqui */
     background-image: url('tec.png');
 }
 
@@ -206,33 +187,31 @@ header {
     margin-right: 10px;
     border: 1px solid #eee;
     
-    /* Adicione estas linhas para o efeito de clique */
-    cursor: pointer; /* Indica que é clicável */
-    transition: transform 0.2s ease-in-out; /* Transição suave */
+    
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; 
 }
 
-/* Nova classe CSS para o estado "aumentado" */
 .profile-icon.enlarged {
-    transform: scale(2); /* Aumenta o tamanho em 200% */
+    transform: scale(2); 
 }
 
 /* --- ESTILOS PARA O MODAL (IMAGEM TELA CHEIA) --- */
 
-/* O contêiner do modal (Fundo preto semi-transparente) */
+
 .modal {
-    display: none; /* Inicia escondido */
-    position: fixed; /* Fica fixo sobre todo o conteúdo */
-    z-index: 2000; /* Deve ser um valor alto para ficar acima de tudo */
-    padding-top: 60px; /* Espaço do topo (para não encostar na borda) */
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    padding-top: 60px; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%;
-    overflow: auto; /* Habilita rolagem se a imagem for muito grande */
-    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto escuro e transparente */
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); 
 }
 
-/* O conteúdo da imagem dentro do modal */
 .modal-content {
     margin: auto;
     display: block;
@@ -240,25 +219,19 @@ header {
     max-width: 700px;
     height: auto;
     
-    /* Animação de entrada sutil (opcional) */
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
     animation-duration: 0.6s;
 }
-
-/* Animação para a imagem */
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
     to {-webkit-transform:scale(1)}
 }
-
 @keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
 }
-
-/* O botão de fechar (x) */
 .close-btn {
     position: absolute;
     top: 15px;
@@ -269,7 +242,6 @@ header {
     transition: 0.3s;
     cursor: pointer;
 }
-
 .close-btn:hover,
 .close-btn:focus {
     color: #bbb;
@@ -277,7 +249,6 @@ header {
     cursor: pointer;
 }
 
-/* Opcional: Estiliza o texto alternativo/legenda */
 #caption {
     margin: auto;
     display: block;
@@ -288,3 +259,4 @@ header {
     padding: 10px 0;
     height: 150px;
 }
+
