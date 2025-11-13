@@ -260,3 +260,53 @@ header {
     height: 150px;
 }
 
+/* --- ESTILOS PARA A PÁGINA FAMÍLIA (GRID MASONRY) --- */
+
+/* Container principal do Masonry */
+.masonry-grid {
+    /* Define o número de colunas (o Masonry do CSS) */
+    column-count: 3; 
+    column-gap: 1em; /* Espaço entre as colunas */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Item dentro do Masonry */
+.grid-item {
+    /* Faz a imagem se encaixar no espaço sem ser cortada */
+    display: inline-block; 
+    width: 100%;
+    margin-bottom: 1em; /* Espaço na parte inferior de cada item */
+    
+    /* ESSENCIAL: Evita que um item seja dividido entre as colunas */
+    break-inside: avoid; 
+}
+
+/* Estilo para as imagens */
+.masonry-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse */
+.masonry-grid img:hover {
+    transform: scale(1.02);
+}
+
+
+/* Responsividade: Exibir menos colunas em telas menores */
+@media (max-width: 900px) {
+    .masonry-grid {
+        column-count: 2; /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        column-count: 1; /* 1 coluna em celulares */
+    }
+}
