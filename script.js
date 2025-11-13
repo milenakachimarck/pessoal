@@ -79,8 +79,10 @@ if (cursoHero) {
         cursoHero.style.backgroundImage = `url(${nextImage})`;
     }
 
-    // Inicia o carrossel, mudando a imagem a cada 5 segundos (5000ms)
-    setInterval(changeCursoBackground, 2000); 
+  setTimeout(() => {
+    // Inicia o carrossel APENAS depois de 1 segundo
+    setInterval(changeCursoBackground, 2000);
+}, 1000);
 }
 });
     
