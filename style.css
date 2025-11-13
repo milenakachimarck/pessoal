@@ -166,9 +166,58 @@ header {
 
 /* 1. ESTILO HERO FAMÍLIA */
 #familia-hero {
-    background-image: url('Capturar.PNG');
+ 
+    background-image: url('Capturar.PNG'); 
+    /* Configurações chave para alinhar lado a lado */
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre texto e carrossel */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 5%; /* Ajusta o padding horizontal */
+}
+/* 2. Redefinir o tamanho da caixa de texto para caber o carrossel */
+#familia-hero .text-box {
+    max-width: 40%; 
+    padding-top: 0;
+
+/* 3. Redefinir a posição do carrossel e torná-lo responsivo */
+.carousel-container-familia.side-by-side {
+    position: relative; 
+    margin-right: 5%; 
+    width: 40%;
+    min-width: 300px; 
+    max-width: 400px;
+    padding: 0; 
 }
 
+.stack-carousel-familia {
+    width: 100%; 
+    height: 480px; 
+    position: relative; 
+}
+
+/* 4. Mover o botão para caber ao lado do carrossel */
+#next-stack-btn-familia {
+    right: 0;
+}
+
+@media (max-width: 900px) {
+    #familia-hero {
+        flex-direction: column; 
+        height: auto; 
+        padding-top: 100px; 
+    }
+    
+    #familia-hero .text-box {
+        max-width: 90%; 
+        padding-bottom: 30px; 
+    }
+    
+    .carousel-container-familia.side-by-side {
+        width: 80%; /* Ocupa 80% da tela para ficar centralizado */
+        min-width: 300px;
+        margin: 0 auto 50px auto; 
+    }
+}
 /* 2. ESTILO HERO AMIGOS */
 #amigos-hero {
     background-image: url('amgcolagem.png');
