@@ -436,7 +436,8 @@ header {
 /* Estilo do botão de navegação */
 #next-stack-btn-familia {
     position: absolute;
-    right: -50px; 
+    /* MUDANÇA: Posiciona o botão fora da caixa das cartas para ser um elemento de controle */
+    right: -60px; /* Ajustado para mover mais para a direita, fora do carrossel */
     top: 50%;
     transform: translateY(-50%);
     background: #000;
