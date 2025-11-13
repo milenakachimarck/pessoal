@@ -43,14 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- CARROSSEL DE FUNDO: CURSO TÉCNICO (8 FOTOS) ---
 
-// 1. Defina o elemento alvo
+// --- CARROSSEL DE FUNDO: CURSO TÉCNICO (8 FOTOS) ---
 const cursoHero = document.getElementById('cursotec-hero');
 
-// 2. A lista de 8 imagens (MUDE OS NOMES DOS ARQUIVOS!)
-// As imagens devem estar na mesma pasta ou o caminho deve ser ajustado.
+// 1. A lista de 8 imagens (VERIFIQUE OS NOMES!)
 const cursoImages = [
     'tec1.jpg',
-    'te2.jpg',
+    'tec2.jpg',
     'tec3.jpg',
     'tec4.jpg',
     'tec5.jpg',
@@ -61,28 +60,34 @@ const cursoImages = [
 
 let cursoImageIndex = 0;
 
-// 3. Verifica se estamos na página correta
 if (cursoHero) {
     
     function changeCursoBackground() {
-        // Avança para o próximo índice
-        cursoImageIndex++;
-        
-        // Se for o último, volta para o primeiro (loop infinito)
-        if (cursoImageIndex >= cursoImages.length) {
-            cursoImageIndex = 0;
-        }
-        
+        // ... Lógica de troca de imagem ...
+        cursoImageIndex = (cursoImageIndex + 1) % cursoImages.length;
         const nextImage = cursoImages[cursoImageIndex];
-        
-        // Aplica a nova imagem de fundo
         cursoHero.style.backgroundImage = `url(${nextImage})`;
     }
 
-  setTimeout(() => {
-    // Inicia o carrossel APENAS depois de 1 segundo
-    setInterval(changeCursoBackground, 2000);
-}, 1000);
+    // 2. Pré-carregamento das imagens
+    let imagesLoaded = 0;
+    cursoImages.forEach(imagePath => {
+        const img = new Image();
+        img.onload = () => {
+            // Conta as imagens que terminaram de carregar
+            imagesLoaded++;
+            if (imagesLoaded === cursoImages.length) {
+                // Todas as 8 imagens carregaram. Agora podemos iniciar o carrossel.
+                setInterval(changeCursoBackground, 2000); 
+            }
+        };
+        // Inicia o carregamento da imagem
+        img.src = imagePath;
+    });
+    
+    // Se, por algum motivo (como caching), o onload não disparar imediatamente,
+    // garantimos que a primeira imagem já esteja visível pelo CSS (Etapa 1).
 }
+// --- FIM DO CÓDIGO DE CARROSSEL ---
 });
     
