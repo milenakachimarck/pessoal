@@ -99,8 +99,7 @@ header {
 
 /* --- SEÇÃO HERO (IMAGEM E TEXTO) --- */
 .hero {
-    height: 100vh; 
-    background-image: url(principal.png); 
+    height: 100vh;  
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -178,7 +177,7 @@ header {
 #familia-hero .text-box {
     max-width: 40%; 
     padding-top: 0;
-
+}
 /* 3. Redefinir a posição do carrossel e torná-lo responsivo */
 .carousel-container-familia.side-by-side {
     position: relative; 
@@ -188,7 +187,10 @@ header {
     max-width: 400px;
     padding: 0; 
 }
-
+/* 0. ESTILO HERO SOBRE MIM (NOVO) */
+#index-hero {
+    background-image: url('principal.png'); /* A imagem só será aplicada aqui */
+}
 .stack-carousel-familia {
     width: 100%; 
     height: 480px; 
