@@ -436,8 +436,8 @@ header {
 /* Estilo do botão de navegação */
 #next-stack-btn-familia {
     position: absolute;
-    /* MUDANÇA: Posiciona o botão fora da caixa das cartas para ser um elemento de controle */
-    right: -60px; /* Ajustado para mover mais para a direita, fora do carrossel */
+    /* Coloque o botão ligeiramente para fora da pilha de cartas */
+    right: -60px; /* Ajuste para dar espaço ao botão, mantendo-o visível */
     top: 50%;
     transform: translateY(-50%);
     background: #000;
@@ -449,7 +449,10 @@ header {
     cursor: pointer;
     font-size: 1.2em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 20;
+    
+    /* AUMENTAR O Z-INDEX para ter CERTEZA que ele fica na frente de todas as cartas */
+    z-index: 50; 
+    
     transition: background 0.2s;
 }
 
