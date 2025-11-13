@@ -111,3 +111,57 @@ if (lightboxItems.length > 0) {
     });
 }
 // --- FIM DO CÓDIGO HOVER LIGHTBOX JS ---
+
+// --- JAVASCRIPT PARA CARROSSEL EMPILHADO (PÁGINA FAMÍLIA) ---
+
+const stackBtnFamilia = document.getElementById('next-stack-btn-familia');
+const stackCarouselFamilia = document.querySelector('.stack-carousel-familia');
+
+if (stackCarouselFamilia && stackBtnFamilia) {
+    const cardsFamilia = stackCarouselFamilia.querySelectorAll('.stack-card-familia');
+    let currentIndexFamilia = 0; // Índice da foto ativa
+
+    if (cardsFamilia.length < 2) {
+        stackBtnFamilia.style.display = 'none';
+        return;
+    }
+
+    // Função para tratar o clique no botão
+    stackBtnFamilia.addEventListener('click', () => {
+        
+        // 1. Identifica a carta que está no topo e vai sair
+        const currentCard = cardsFamilia[currentIndexFamilia];
+        
+        // 2. Calcula o índice da próxima carta
+        currentIndexFamilia = (currentIndexFamilia + 1) % cardsFamilia.length;
+        const nextCard = cardsFamilia[currentIndexFamilia];
+
+        // 3. Aplica a animação de saída na carta atual
+        currentCard.classList.remove('active-familia');
+        currentCard.classList.add('is-leaving-familia');
+        
+        // 4. Garante que a próxima carta se torne a ativa
+        nextCard.classList.add('active-familia');
+
+        // 5. Usa setTimeout para resetar a carta que saiu após a animação
+        setTimeout(() => {
+            currentCard.classList.remove('is-leaving-familia');
+            
+            // Move o elemento HTML para o final do contêiner 
+            stackCarouselFamilia.appendChild(currentCard); 
+            
+            // Desativa/ativa a transição momentaneamente para resetar a posição sem o usuário ver
+            currentCard.style.transition = 'none'; 
+            
+            currentCard.style.transform = ''; 
+            currentCard.style.opacity = '1';
+            currentCard.style.zIndex = '1'; 
+            
+            setTimeout(() => {
+                currentCard.style.transition = '';
+            }, 50);
+
+        }, 600); // Tempo igual ao 'transition' do CSS (0.6s)
+    });
+}
+// --- FIM DO CÓDIGO STACKING CAROUSEL FAMÍLIA ---

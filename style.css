@@ -260,56 +260,6 @@ header {
     height: 150px;
 }
 
-/* --- ESTILOS PARA A PÁGINA FAMÍLIA (GRID MASONRY) --- */
-
-/* Container principal do Masonry */
-.masonry-grid {
-    /* Define o número de colunas (o Masonry do CSS) */
-    column-count: 3; 
-    column-gap: 1em; /* Espaço entre as colunas */
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* Item dentro do Masonry */
-.grid-item {
-    /* Faz a imagem se encaixar no espaço sem ser cortada */
-    display: inline-block; 
-    width: 100%;
-    margin-bottom: 1em; /* Espaço na parte inferior de cada item */
-    
-    /* ESSENCIAL: Evita que um item seja dividido entre as colunas */
-    break-inside: avoid; 
-}
-
-/* Estilo para as imagens */
-.masonry-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-/* Efeito sutil ao passar o mouse */
-.masonry-grid img:hover {
-    transform: scale(1.02);
-}
-
-
-/* Responsividade: Exibir menos colunas em telas menores */
-@media (max-width: 900px) {
-    .masonry-grid {
-        column-count: 2; /* 2 colunas em tablets */
-    }
-}
-
-@media (max-width: 600px) {
-    .masonry-grid {
-        column-count: 1; /* 1 coluna em celulares */
-    }
-}
 
 /* --- ESTILOS PARA A PÁGINA AMIGOS (HOVER LIGHTBOX COM JS) --- */
 
@@ -375,4 +325,82 @@ header {
         width: 140px;
         height: 140px;
     }
+}
+
+/* --- ESTILOS PARA A PÁGINA FAMÍLIA (STACKING CAROUSEL) --- */
+
+.carousel-container-familia {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.stack-carousel-familia {
+    position: relative;
+    width: 380px; /* Largura do card */
+    height: 480px; /* Altura do card */
+    
+    perspective: 1500px; 
+}
+
+.stack-card-familia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    
+    transition: transform 0.6s ease, opacity 0.6s ease, z-index 0s 0.6s;
+    
+    transform: translateZ(0) rotate(0deg) translateX(0);
+    z-index: 1; 
+    opacity: 1;
+}
+
+/* Define a primeira carta ativa */
+.stack-card-familia.active-familia {
+    z-index: 10; 
+}
+
+/* Estilo para as primeiras 5 cartas inativas empilhadas no fundo */
+.stack-card-familia:nth-child(2) { transform: translateZ(-10px) rotate(2deg) translateX(5px); z-index: 9; }
+.stack-card-familia:nth-child(3) { transform: translateZ(-20px) rotate(-3deg) translateX(-5px); z-index: 8; }
+.stack-card-familia:nth-child(4) { transform: translateZ(-30px) rotate(4deg) translateX(5px); z-index: 7; }
+.stack-card-familia:nth-child(5) { transform: translateZ(-40px) rotate(-2deg) translateX(-5px); z-index: 6; }
+.stack-card-familia:nth-child(n+6) { transform: translateZ(-50px) rotate(0deg) translateX(0px); z-index: 1; } /* Demais cartas */
+
+
+/* CLASSE QUE O JAVASCRIPT APLICA PARA TIRAR A CARTA DA PILHA */
+.stack-card-familia.is-leaving-familia {
+    /* Simula a carta sendo jogada para o lado, para trás e se tornando invisível */
+    transform: translateZ(500px) rotate(15deg) translateX(300px);
+    opacity: 0;
+    z-index: 20; 
+    transition: transform 0.6s ease, opacity 0.6s ease, z-index 0s 0.6s; 
+}
+
+/* Estilo do botão de navegação */
+#next-stack-btn-familia {
+    position: absolute;
+    right: -50px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+    transition: background 0.2s;
+}
+
+#next-stack-btn-familia:hover {
+    background: #444;
 }
